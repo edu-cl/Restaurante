@@ -9,18 +9,38 @@ package Modelo.Principal;
  *
  * @author migue
  */
-public class Drink extends Product{
-    
+public class Drink extends Product {
+
     private boolean alcoholic;
-    
+
     public Drink(String name, double price, boolean forCeliac, boolean ac) {
         super(name, price, forCeliac);
-        this.alcoholic=ac;
+        this.alcoholic = ac;
     }
 
     @Override
     public boolean getBudlePack() {
         return false;
     }
-    
+
+    @Override
+    public String toString() {
+        return "\n" + super.toString() + "Drink{" + "alcoholic=" + alcoholic + '}';
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        boolean result = false;
+        if (this == obj) {
+            result = true;
+        }
+        if (obj != null && obj instanceof Drink) {
+            Product a = (Drink) obj;
+            if (this.getId() == a.getId()) {
+                result = true;
+            }
+        }
+        return result;
+    }
+
 }
