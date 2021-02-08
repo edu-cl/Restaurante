@@ -20,7 +20,7 @@ public class Drink extends Product{
 
     @Override
     public boolean getBudlePack() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        
     }
     
 }
