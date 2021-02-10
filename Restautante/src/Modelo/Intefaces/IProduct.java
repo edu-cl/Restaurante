@@ -5,12 +5,14 @@
  */
 package Modelo.Intefaces;
 
+import Modelo.Principal.Product;
+
 /**
  *
  * @author migue
  */
 public interface IProduct {
-    /*Borrar ahora mismo no se que tipo es*/boolean getBudlePack();
+    int[] getBudlePack();
     String getName();
     double getPrice();
     boolean getisForCeliac();

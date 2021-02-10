@@ -11,10 +11,12 @@ package Modelo.Principal;
  */
 public class Drink extends Product {
 
+    private int[] BudlePack={};
     private boolean alcoholic;
 
     public Drink(String name, double price, boolean forCeliac, boolean ac) {
         super(name, price, forCeliac);
+        this.BudlePack = BudlePack;
         this.alcoholic = ac;
     }
 
@@ -25,10 +27,14 @@ public class Drink extends Product {
     public void setAlcoholic(boolean alcoholic) {
         this.alcoholic = alcoholic;
     }
-    
+
+    public void setBudlePack(int[] BudlePack) {
+        this.BudlePack = BudlePack;
+    }
+
     @Override
-    public boolean getBudlePack() {
-        return false;
+    public int[] getBudlePack() {
+        return BudlePack;
     }
 
     @Override

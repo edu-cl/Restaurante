@@ -5,6 +5,9 @@
  */
 package Modelo.Principal;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  *
  * @author migue
@@ -12,9 +15,11 @@ package Modelo.Principal;
 public class Food extends Product {
 
     private boolean ForVegans;
+    private  int[] BudlePack={};
 
-    public Food(String name, double price, boolean forCeliac, boolean veg) {
-        super(name, price, forCeliac);
+    public Food(String name, double price, boolean forCeliac, boolean veg ) {
+        super(name, price, forCeliac);   
+        this.BudlePack=BudlePack;
         this.ForVegans = veg;
     }
 
@@ -25,12 +30,16 @@ public class Food extends Product {
     public void setForVegans(boolean ForVegans) {
         this.ForVegans = ForVegans;
     }
-  
 
-    @Override
-    public boolean getBudlePack() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public int[] getBudlePack() {
+        return BudlePack;
     }
+
+    public void setBudlePack(int[] lista) {
+        this.BudlePack = lista;
+    }
+  
+    
 
     @Override
     public String toString() {
@@ -51,5 +60,7 @@ public class Food extends Product {
         }
         return result;
     }
+
+
 
 }

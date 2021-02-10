@@ -12,14 +12,27 @@ public class RepositoryProduct {
 
     public List<Product> productos;
 
+    Drink d1 = new Drink("Coca Cola", 1.5, false, false);
+    int[] i1 = {3, 4};
+    Drink d2 = new Drink("Nestea", 1, true, false);
+    Drink d3 = new Drink("Larios", 1.5, true, true);
+    int[] i3 = {0};
+    Food f1 = new Food("Kebab", 3.5, false, true);
+    int[] c1 = {1};
+    Food f2 = new Food("Patatas", 1.5, true, true);
+    Food f3 = new Food("Pizza", 5, true, true);
+
     public RepositoryProduct() {
         productos = new ArrayList<>();
-        productos.add(new Drink("Coca Cola", 1.5, false, false));
-        productos.add(new Drink("Nestea", 1, true, false));
-        productos.add(new Drink("Larios", 1.5, true, true));
-        productos.add(new Food("Kebab", 3.5, false, true));
-        productos.add(new Food("Patatas", 1.5, true, true));
-        productos.add(new Food("Pizza", 5, true, true));
+        d1.setBudlePack(i1);
+        d3.setBudlePack(i3);
+        f1.setBudlePack(c1);
+        productos.add(d1);
+        productos.add(d2);
+        productos.add(d3);
+        productos.add(f1);
+        productos.add(f2);
+        productos.add(f3);
     }
 
     public List<Product> getProductos() {
@@ -28,6 +41,16 @@ public class RepositoryProduct {
 
     public void setProductos(List<Product> productos) {
         this.productos = productos;
+    }
+    
+    public void getBundleProduct(Product p){
+        Product result;
+        
+        for(int i =0;i<p.getBudlePack().length;i++){
+            
+            result=searchProduct(p.getBudlePack()[i]);
+            System.out.println(result);
+        }
     }
 
     public void getAllDrink() {
@@ -101,6 +124,20 @@ public class RepositoryProduct {
         return result;
     }
 
+    public Product searchProduct(int id){
+        Product result = null;
+
+        for (int i = 0; i < productos.size(); i++) {
+            if (productos.get(i).getName() != null ) {
+                if (productos.get(i).getId()==id) {
+                    result = productos.get(i);
+                }
+            }
+
+        }
+        return result;
+    }
+
     public Product searchDrinks(String name) {
         Product result = new Drink("Desconocido", 0, true, true);
 
@@ -137,6 +174,7 @@ public class RepositoryProduct {
         RepositoryProduct rp1 = new RepositoryProduct();
         // System.out.println(rp1.productos);
         //rp1.getAllDrink();
+        /*
         try {
             //System.out.println(rp1.searchProduct("Kebab"));
             System.out.println(rp1.searchDrinks("lArIoS"));
@@ -145,6 +183,8 @@ public class RepositoryProduct {
         } catch (Exception ex) {
             System.out.println("No se ha encontrado el producto");
         }
+*/
+       rp1.getBundleProduct(rp1.productos.get(0));
     }
 
 }

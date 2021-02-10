@@ -29,7 +29,7 @@ public abstract class Product implements IProduct {
     }
 
     @Override
-    public abstract boolean getBudlePack();
+    public abstract int[] getBudlePack();
 
     public int getId() {
         return id;
