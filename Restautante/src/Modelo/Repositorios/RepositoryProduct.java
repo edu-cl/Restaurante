@@ -141,6 +141,7 @@ public class RepositoryProduct {
             //System.out.println(rp1.searchProduct("Kebab"));
             System.out.println(rp1.searchDrinks("lArIoS"));
             System.out.println(rp1.searchFood("patatas"));
+            System.out.println("Hola");
         } catch (Exception ex) {
             System.out.println("No se ha encontrado el producto");
         }
