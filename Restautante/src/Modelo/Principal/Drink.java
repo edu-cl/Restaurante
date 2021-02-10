@@ -18,6 +18,14 @@ public class Drink extends Product {
         this.alcoholic = ac;
     }
 
+    public boolean isAlcoholic() {
+        return alcoholic;
+    }
+
+    public void setAlcoholic(boolean alcoholic) {
+        this.alcoholic = alcoholic;
+    }
+    
     @Override
     public boolean getBudlePack() {
         return false;

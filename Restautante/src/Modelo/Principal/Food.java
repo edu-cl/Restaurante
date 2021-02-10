@@ -11,12 +11,21 @@ package Modelo.Principal;
  */
 public class Food extends Product {
 
-    public boolean forVegans;
+    private boolean ForVegans;
 
     public Food(String name, double price, boolean forCeliac, boolean veg) {
         super(name, price, forCeliac);
-        this.forVegans = veg;
+        this.ForVegans = veg;
     }
+
+    public boolean isForVegans() {
+        return ForVegans;
+    }
+
+    public void setForVegans(boolean ForVegans) {
+        this.ForVegans = ForVegans;
+    }
+  
 
     @Override
     public boolean getBudlePack() {
@@ -25,7 +34,7 @@ public class Food extends Product {
 
     @Override
     public String toString() {
-        return "\n" + super.toString() + "Food{" + "forVegans=" + forVegans + '}';
+        return "\n" + super.toString() + "Food{" + "forVegans=" + ForVegans + '}';
     }
 
     @Override
@@ -42,4 +51,5 @@ public class Food extends Product {
         }
         return result;
     }
+
 }
