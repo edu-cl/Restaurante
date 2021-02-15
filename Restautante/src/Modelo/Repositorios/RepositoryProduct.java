@@ -43,6 +43,7 @@ public class RepositoryProduct {
         this.productos = productos;
     }
     
+    //Modificar para que devuelva el array de entero.
     public void getBundleProduct(Product p){
         Product result;
         
