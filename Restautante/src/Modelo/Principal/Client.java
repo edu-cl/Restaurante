@@ -12,11 +12,11 @@ import java.util.Arrays;
  * @author migue
  */
 public class Client extends Person{
-    private String[] adress;
-    private int[] order;
+    protected String[] adress;
+    protected int[] order;
     private int points;
 
-    public Client(String[] adress, int[] order, int points, String DNI, String name, int age) {
+    public Client(int points, String DNI, String name, int age) {
         super(DNI, name, age);
         this.adress = adress;
         this.order = order;
