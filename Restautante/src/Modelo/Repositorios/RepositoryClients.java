@@ -10,6 +10,7 @@ import Modelo.Principal.Client;
 import Modelo.Principal.Product;
 
 import java.util.ArrayList;
+import java.util.Scanner;
 
 /**
  *
@@ -20,12 +21,7 @@ public class RepositoryClients {
     private List<Client> Clients;
 
     public RepositoryClients() {
-
         Clients = new ArrayList<>();
-        Clients.add(new Client( 0, DNI, name, 0));
-        Clients.add(new Client( 0, DNI, name, 0));
-        Clients.add(new Client( 0, DNI, name, 0));
-        Clients.add(new Client( 0, DNI, name, 0));
 
     }
 
@@ -60,28 +56,61 @@ public class RepositoryClients {
                 if (Clients.get(i).getDNI().toLowerCase().equals(DNI.toLowerCase())) {
                     result = Clients.get(i);
                 }
-
             }
         }
+        return result;
+    }
 
+    public Client updateClient(Client c) {
+        Scanner teclado=new Scanner(System.in);
+        System.out.println("Introduce el DNI nuevo");
+        String newDNI=teclado.nextLine();
+        c.setDNI(newDNI);
+        System.out.println("Introduce el nuevo nombre");
+        String nombre=teclado.nextLine();
+        c.setName(nombre);
+        System.out.println("Introduce la edad nueva");
+        int newEdad=teclado.nextInt();
+        c.setAge(newEdad);
+        return c;
+    }
+
+    public boolean addClient(Client c) {
+        boolean result = false;
+        if (c != null) {
+            Clients.add(c);
+            result = true;
+
+        }
         return result;
 
     }
 
-    public Client updateClient(Client c) {
-        Client n = null;
-
-        return n;
-    }
-
-    public boolean addClient(Client c) {
-        return false;
-
-    }
-
     public boolean deleteClient(String dni) {
-        return false;
-
+        boolean result=false;
+        
+        for(int i=0;i<Clients.size();i++){
+            if(Clients.get(i).getDNI().equals(dni)){
+                Clients.remove(i);
+                result=true;
+            }
+        }
+        return result;
     }
+    
+    public boolean deleteClient(Client c){
+        boolean result=false;
+        
+        if(Clients.contains(c)==true){
+            Clients.remove(c);
+            result=true;
+            
+        }
+        
+        
+       return result; 
+    }
+    
+    
 
 }

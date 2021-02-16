@@ -5,37 +5,35 @@
  */
 package Modelo.Principal;
 
-import java.util.Arrays;
+import java.util.ArrayList;
+import java.util.List;
 
-/**
- *
- * @author migue
- */
-public class Client extends Person{
-    protected String[] adress;
-    protected int[] order;
+public class Client extends Person {
+
+    protected List<String> adress;
+    protected List<Integer> order;
     private int points;
 
-    public Client(int points, String DNI, String name, int age) {
+    public Client(String DNI, String name, int age, int points) {
         super(DNI, name, age);
-        this.adress = adress;
-        this.order = order;
+        this.adress = new ArrayList<>();
+        this.order = new ArrayList<>();
         this.points = points;
     }
 
-    public String[] getAdress() {
+    public List<String> getAdress() {
         return adress;
     }
 
-    public void setAdress(String[] adress) {
+    public void setAdress(List<String> adress) {
         this.adress = adress;
     }
 
-    public int[] getOrder() {
+    public List<Integer> getOrder() {
         return order;
     }
 
-    public void setOrder(int[] order) {
+    public void setOrder(List<Integer> order) {
         this.order = order;
     }
 
@@ -47,7 +45,6 @@ public class Client extends Person{
         this.points = points;
     }
 
-
     @Override
     public boolean equals(Object obj) {
         boolean result = false;
@@ -55,14 +52,12 @@ public class Client extends Person{
             result = true;
         }
         if (obj != null && obj instanceof Drink) {
-            Client a =  (Client) obj;
-            if (this.getDNI()== a.getDNI()) {
+            Client a = (Client) obj;
+            if (this.getDNI().equals(a.getDNI())) {
                 result = true;
             }
         }
         return result;
     }
 
-    
-    
 }
