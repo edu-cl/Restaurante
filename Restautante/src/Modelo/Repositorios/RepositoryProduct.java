@@ -42,73 +42,88 @@ public class RepositoryProduct {
     public void setProductos(List<Product> productos) {
         this.productos = productos;
     }
-    
+
     //Modificar para que devuelva el array de entero.
-    public void getBundleProduct(Product p){
-        Product result;
-        
-        for(int i =0;i<p.getBudlePack().length;i++){
-            
-            result=searchProduct(p.getBudlePack()[i]);
+    public int[] getBundleProduct(Product p) {
+        // int[] result;
+
+        /*
+        for (int i = 0; i < p.getBudlePack().length; i++) {
+
+            result = searchProduct(p.getBudlePack()[i]);
             System.out.println(result);
         }
+         */
+        return p.getBudlePack();
     }
 
-    public void getAllDrink() {
+    public List<Product> getAllDrink() {
+        List<Product> p1 = new ArrayList<>();
         for (int i = 0; i < productos.size(); i++) {
             if (productos.get(i) instanceof Drink) {
-                System.out.println(productos.get(i));
+                p1.add(productos.get(i));
             }
         }
+        return p1;
     }
 
-    public void getAllFood() {
+    public List<Product> getAllFood() {
+        List<Product> p1 = new ArrayList<>();
         for (int i = 0; i < productos.size(); i++) {
             if (productos.get(i) instanceof Food) {
-                System.out.println(productos.get(i));
+                p1.add(productos.get(i));
             }
         }
+        return p1;
     }
 
-    public void getAllProducts() {
+    public List<Product> getAllProducts() {
+        List<Product> p1 = new ArrayList<>();
         for (int i = 0; i < productos.size(); i++) {
             if (productos.get(i) instanceof Product) {
-                System.out.println(productos.get(i));
+                p1.add(productos.get(i));
             }
         }
+        return p1;
     }
 
-    public void getAllNoAlcoholicDrink() {
+    public List<Drink> getAllNoAlcoholicDrink() {
+        List<Drink> result = new ArrayList<>();
         for (int i = 0; i < productos.size(); i++) {
             if (productos.get(i) instanceof Drink) {
                 Drink aux = (Drink) productos.get(i);
                 if (aux.isAlcoholic() == false) {
-                    System.out.println(aux);
+                    result.add(aux);
                 }
             }
         }
+        return result;
     }
 
-    public void getAllAlcoholicDrink() {
+    public List<Drink> getAllAlcoholicDrink() {
+        List<Drink> result = new ArrayList<>();
         for (int i = 0; i < productos.size(); i++) {
             if (productos.get(i) instanceof Drink) {
                 Drink aux = (Drink) productos.get(i);
                 if (aux.isAlcoholic() != false) {
-                    System.out.println(aux);
+                    result.add(aux);
                 }
             }
         }
+        return result;
     }
 
-    public void getAllForVegansFood() {
+    public List<Food> getAllForVegansFood() {
+        List<Food> result = new ArrayList<>();
         for (int i = 0; i < productos.size(); i++) {
             if (productos.get(i) instanceof Food) {
                 Food aux = (Food) productos.get(i);
                 if (aux.isForVegans() != false) {
-                    System.out.println(aux);
+                    result.add(aux);
                 }
             }
         }
+        return result;
     }
 
     public Product searchProduct(String name) throws Exception {
@@ -125,12 +140,12 @@ public class RepositoryProduct {
         return result;
     }
 
-    public Product searchProduct(int id){
+    public Product searchProduct(int id) {
         Product result = null;
 
         for (int i = 0; i < productos.size(); i++) {
-            if (productos.get(i).getName() != null ) {
-                if (productos.get(i).getId()==id) {
+            if (productos.get(i).getName() != null) {
+                if (productos.get(i).getId() == id) {
                     result = productos.get(i);
                 }
             }
@@ -184,8 +199,9 @@ public class RepositoryProduct {
         } catch (Exception ex) {
             System.out.println("No se ha encontrado el producto");
         }
-*/
-       rp1.getBundleProduct(rp1.productos.get(0));
+         */
+
+        // rp1.getBundleProduct(rp1.productos.get(0));
     }
 
 }

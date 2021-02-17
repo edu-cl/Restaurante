@@ -62,16 +62,18 @@ public class RepositoryClients {
     }
 
     public Client updateClient(Client c) {
-        Scanner teclado=new Scanner(System.in);
+        Scanner teclado = new Scanner(System.in);
+        int posicion = Clients.indexOf(c);
         System.out.println("Introduce el DNI nuevo");
-        String newDNI=teclado.nextLine();
+        String newDNI = teclado.nextLine();
         c.setDNI(newDNI);
         System.out.println("Introduce el nuevo nombre");
-        String nombre=teclado.nextLine();
+        String nombre = teclado.nextLine();
         c.setName(nombre);
         System.out.println("Introduce la edad nueva");
-        int newEdad=teclado.nextInt();
+        int newEdad = teclado.nextInt();
         c.setAge(newEdad);
+        Clients.set(posicion, c);
         return c;
     }
 
@@ -87,28 +89,26 @@ public class RepositoryClients {
     }
 
     public boolean deleteClient(String dni) {
-        boolean result=false;
-        
-        for(int i=0;i<Clients.size();i++){
-            if(Clients.get(i).getDNI().equals(dni)){
+        boolean result = false;
+
+        for (int i = 0; i < Clients.size(); i++) {
+            if (Clients.get(i).getDNI().equals(dni)) {
                 Clients.remove(i);
-                result=true;
+                result = true;
             }
         }
         return result;
     }
-    
-    public boolean deleteClient(Client c){
-        boolean result=false;
-        
-        if(Clients.contains(c)==true){
+
+    public boolean deleteClient(Client c) {
+        boolean result = false;
+
+        if (Clients.contains(c) == true) {
             Clients.remove(c);
-            result=true;
-            
+            result = true;
+
         }
-       return result; 
+        return result;
     }
-    
-    
 
 }
