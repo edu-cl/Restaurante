@@ -22,6 +22,11 @@ public class Food extends Product {
         this.BudlePack=BudlePack;
         this.ForVegans = veg;
     }
+        public Food(String name) {
+        super(name);   
+        this.BudlePack=BudlePack;
+        this.ForVegans = false;
+    }
 
     public boolean isForVegans() {
         return ForVegans;

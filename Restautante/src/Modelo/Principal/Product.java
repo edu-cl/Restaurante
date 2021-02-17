@@ -13,19 +13,27 @@ import java.util.UUID;
  * @author migue
  */
 public abstract class Product implements IProduct {
-    public static int contador=0;
+
+    public static int contador = 0;
     private int id;
     private String name;
     private double price;
     private boolean forCeliac;
 
     public Product(String name, double price, boolean forCeliac) {
-        
-        this.id =contador++ ;
+
+        this.id = contador++;
         this.name = name;
         this.price = price;
         this.forCeliac = forCeliac;
 
+    }
+
+    public Product(String name) {
+        this.id = contador++;
+        this.name = name;
+        this.price = 0;
+        this.forCeliac = false;
     }
 
     @Override
@@ -34,7 +42,7 @@ public abstract class Product implements IProduct {
     public int getId() {
         return id;
     }
-    
+
     @Override
     public String getName() {
         return name;
