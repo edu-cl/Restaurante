@@ -30,7 +30,7 @@ public class RepositoryOrders {
         List<Order> result=new ArrayList<>();
         for(int i=0;i<orders.size();i++){
             if(orders.get(i).getClient().getDNI().equals(dni)){
-                result.add((Order) orders);
+                result.add((Order) orders.get(i));
             }
         }
         return result;
@@ -41,7 +41,7 @@ public class RepositoryOrders {
         for(int i=0;i<orders.size();i++){
             if(ini.isBefore(orders.get(i).getDate())||ini.equals(orders.get(i).getDate())
               &&end.isAfter(orders.get(i).getDate())||end.equals(orders.get(i).getDate())){
-                result.add((Order) orders);
+                result.add((Order) orders.get(i));
             }
         }
         return result;
@@ -51,7 +51,7 @@ public class RepositoryOrders {
         List<Order> result=new ArrayList<>();
         for(int i=0;i<orders.size();i++){
             if(orders.get(i).isDelivered()==false){
-                result.add((Order) orders);
+                result.add((Order) orders.get(i));
             }
         }
         return result;
@@ -60,7 +60,7 @@ public class RepositoryOrders {
         List<Order> result=new ArrayList<>();
         for(int i=0;i<orders.size();i++){
             if(orders.get(i).isPayed()==false){
-                result.add((Order) orders);
+                result.add((Order) orders.get(i));
             }
         }
         return result;
