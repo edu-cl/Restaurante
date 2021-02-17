@@ -11,13 +11,19 @@ package Modelo.Principal;
  */
 public class Drink extends Product {
 
-    private int[] BudlePack={};
+    private int[] BudlePack = {};
     private boolean alcoholic;
 
     public Drink(String name, double price, boolean forCeliac, boolean ac) {
         super(name, price, forCeliac);
         this.BudlePack = BudlePack;
         this.alcoholic = ac;
+    }
+
+    public Drink(String name) {
+        super(name);
+        this.BudlePack = BudlePack;
+        this.alcoholic = false;
     }
 
     public boolean isAlcoholic() {

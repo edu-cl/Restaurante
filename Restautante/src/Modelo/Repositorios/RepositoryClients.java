@@ -25,12 +25,15 @@ public class RepositoryClients {
 
     }
 
-    public void getAllClients() {
+    public List<Client> getAllClients() {
+        /*
         for (int i = 0; i < Clients.size(); i++) {
             if (Clients.get(i) instanceof Client) {
                 System.out.println(Clients.get(i));
             }
         }
+*/
+        return Clients;
     }
 
     public Client searchClientByName(String name) {

@@ -140,7 +140,7 @@ public class RepositoryProduct {
         return result;
     }
 
-    public Product searchProduct(int id) {
+    public Product searchProduct(int id) throws Exception {
         Product result = null;
 
         for (int i = 0; i < productos.size(); i++) {
@@ -155,7 +155,7 @@ public class RepositoryProduct {
     }
 
     public Product searchDrinks(String name) {
-        Product result = new Drink("Desconocido", 0, true, true);
+        Product result = new Drink("Desconocido");
 
         for (int i = 0; i < productos.size(); i++) {
             if (productos.get(i).getName() != null && !name.equals("")) {
@@ -171,7 +171,7 @@ public class RepositoryProduct {
     }
 
     public Product searchFood(String name) {
-        Product result = new Food("Desconocido", 0, true, true);
+        Product result = new Food("Desconocido");
 
         for (int i = 0; i < productos.size(); i++) {
             if (productos.get(i).getName() != null && !name.equals("")) {
