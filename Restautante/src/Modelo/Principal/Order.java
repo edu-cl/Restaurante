@@ -50,6 +50,15 @@ public class Order {
         return address;
     }
 
+    public LocalDate getDate() {
+        return date;
+    }
+
+    public List<Product> getProducts() {
+        return products;
+    }
+    
+    
     public void setAddress(String address) {
         this.address = address;
     }
