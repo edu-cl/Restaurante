@@ -1,5 +1,6 @@
 package Modelo.Repositorios;
 
+import Modelo.Principal.Client;
 import Modelo.Principal.Drink;
 import Modelo.Principal.Food;
 import Modelo.Principal.Product;
@@ -188,6 +189,7 @@ public class RepositoryProduct {
 
     public static void main(String[] args) {
         RepositoryProduct rp1 = new RepositoryProduct();
+        RepositoryClients rc1=new RepositoryClients();
         // System.out.println(rp1.productos);
         //rp1.getAllDrink();
         /*
@@ -202,6 +204,8 @@ public class RepositoryProduct {
          */
 
         // rp1.getBundleProduct(rp1.productos.get(0));
+        
+        
     }
 
 }

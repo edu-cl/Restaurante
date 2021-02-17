@@ -46,6 +46,12 @@ public class Client extends Person {
     }
 
     @Override
+    public String toString() {
+        return super.toString()+"Client{" + "adress=" + adress + ", order=" + order + ", points=" + points + '}';
+    }
+    
+
+    @Override
     public boolean equals(Object obj) {
         boolean result = false;
         if (this == obj) {
