@@ -25,6 +25,15 @@ public class RepositoryClients {
 
     }
 
+    public List<Client> getClients() {
+        return Clients;
+    }
+
+    public void setClients(List<Client> Clients) {
+        this.Clients = Clients;
+    }
+
+    
     public List<Client> getAllClients() {
         /*
         for (int i = 0; i < Clients.size(); i++) {
