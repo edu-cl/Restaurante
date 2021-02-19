@@ -6,12 +6,10 @@ import Modelo.Principal.Food;
 import Modelo.Principal.Product;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 public class RepositoryProduct {
 
-    public List<Product> productos;
+    private List<Product> productos;
 
     Drink d1 = new Drink("Coca Cola", 1.5, false, false);
     int[] i1 = {3, 4};
