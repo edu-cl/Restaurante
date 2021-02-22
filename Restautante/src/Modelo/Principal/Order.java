@@ -78,5 +78,10 @@ public class Order {
     public void setPayed(boolean payed) {
         this.payed = payed;
     }
+
+    @Override
+    public String toString() {
+        return "Order{" + "client=" + client + ", products=" + products + ", total=" + total + ", date=" + date + ", address=" + address + ", delivered=" + delivered + ", payed=" + payed + '}';
+    }
     
 }

@@ -18,12 +18,20 @@ public class RepositoryOrders {
 
     private List<Order> orders;
     
-    
+        private static RepositoryOrders SingleRepositoryOrders;
 
-    public RepositoryOrders() {
+    private RepositoryOrders() {
         this.orders = new ArrayList<>();
     }
-
+    
+    public static RepositoryOrders getMiRepOrder(){
+        if(SingleRepositoryOrders==null){
+            SingleRepositoryOrders=new RepositoryOrders();
+        }
+        return SingleRepositoryOrders;
+    }
+    
+    
     public List<Order> getOrders() {
         return orders;
     }
