@@ -20,7 +20,19 @@ public class RepositoryClients {
 
     private List<Client> Clients;
 
-    public RepositoryClients() {
+    private static RepositoryClients repositoryClients = null;
+
+    public static RepositoryClients instanceRepositoryClients() {
+
+        if (repositoryClients == null) {
+            repositoryClients = new RepositoryClients();
+
+        }
+        return repositoryClients;
+
+    }
+
+    private RepositoryClients() {
         Clients = new ArrayList<>();
 
     }
@@ -33,7 +45,6 @@ public class RepositoryClients {
         this.Clients = Clients;
     }
 
-    
     public List<Client> getAllClients() {
         /*
         for (int i = 0; i < Clients.size(); i++) {
@@ -41,7 +52,7 @@ public class RepositoryClients {
                 System.out.println(Clients.get(i));
             }
         }
-*/
+         */
         return Clients;
     }
 

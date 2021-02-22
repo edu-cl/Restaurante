@@ -187,7 +187,7 @@ public class RepositoryProduct {
 
     public static void main(String[] args) {
         RepositoryProduct rp1 = new RepositoryProduct();
-        RepositoryClients rc1=new RepositoryClients();
+        RepositoryClients rc1=RepositoryClients.instanceRepositoryClients();
         // System.out.println(rp1.productos);
         //rp1.getAllDrink();
         /*
@@ -200,9 +200,7 @@ public class RepositoryProduct {
             System.out.println("No se ha encontrado el producto");
         }
          */
-
-        // rp1.getBundleProduct(rp1.productos.get(0));
-        
+            
         
     }
 

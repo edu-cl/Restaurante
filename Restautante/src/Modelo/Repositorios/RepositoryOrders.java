@@ -17,21 +17,20 @@ import java.util.List;
 public class RepositoryOrders {
 
     private List<Order> orders;
-    
-        private static RepositoryOrders SingleRepositoryOrders;
+
+    private static RepositoryOrders SingleRepositoryOrders;
 
     private RepositoryOrders() {
         this.orders = new ArrayList<>();
     }
-    
-    public static RepositoryOrders getMiRepOrder(){
-        if(SingleRepositoryOrders==null){
-            SingleRepositoryOrders=new RepositoryOrders();
+
+    public static RepositoryOrders getMiRepOrder() {
+        if (SingleRepositoryOrders == null) {
+            SingleRepositoryOrders = new RepositoryOrders();
         }
         return SingleRepositoryOrders;
     }
-    
-    
+
     public List<Order> getOrders() {
         return orders;
     }
@@ -39,8 +38,6 @@ public class RepositoryOrders {
     public void setOrders(List<Order> orders) {
         this.orders = orders;
     }
-    
-    
 
     public void getAllOrders() {
         for (int i = 0; i < orders.size(); i++) {
